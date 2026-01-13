@@ -1,17 +1,32 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Admin Dashboard
-        </h2>
-    </x-slot>
+    <div class="min-h-screen py-12" style="background:#F6EFE7">
+        <div class="max-w-6xl mx-auto px-10">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                <p class="text-gray-700">
-                    Welcome Admin! This page is protected.
-                </p>
+            <h1 class="text-4xl font-bold uppercase tracking-widest mb-10"
+                style="color:#5A1A1A;">
+                Dashboard
+            </h1>
+
+            <div class="grid grid-cols-3 gap-8">
+                <div class="p-8 rounded-lg shadow"
+                     style="background:#EFE6DC">
+                    <h3 class="text-xl font-semibold">Total Tasks</h3>
+                    <p class="text-4xl mt-4">{{ $totalTasks }}</p>
+                </div>
+
+                <div class="p-8 rounded-lg shadow"
+                     style="background:#EFE6DC">
+                    <h3 class="text-xl font-semibold">Pending</h3>
+                    <p class="text-4xl mt-4">{{ $pendingTasks }}</p>
+                </div>
+
+                <div class="p-8 rounded-lg shadow"
+                     style="background:#EFE6DC">
+                    <h3 class="text-xl font-semibold">Completed</h3>
+                    <p class="text-4xl mt-4">{{ $completedTasks }}</p>
+                </div>
             </div>
+
         </div>
     </div>
 </x-app-layout>

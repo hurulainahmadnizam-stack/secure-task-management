@@ -1,27 +1,40 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800">
-            Create Task
-        </h2>
-    </x-slot>
+    <div class="min-h-screen py-12" style="background-color:#F6EFE7;">
+        <div class="max-w-3xl mx-auto px-10 py-8 rounded-lg"
+             style="background-color:#EFE4D8;">
 
-    <div class="p-6">
-        <form method="POST" action="{{ route('tasks.store') }}">
-            @csrf
+            <h2 class="text-xl font-semibold mb-6"
+                style="color:#5A1A1A;">
+                Create Task
+            </h2>
 
-            <div class="mb-4">
-                <label>Title</label>
-                <input type="text" name="title" class="border p-2 w-full" required>
-            </div>
+            <form method="POST" action="{{ route('tasks.store') }}">
+                @csrf
 
-            <div class="mb-4">
-                <label>Description</label>
-                <textarea name="description" class="border p-2 w-full"></textarea>
-            </div>
+                <!-- TITLE -->
+                <div class="mb-4">
+                    <label class="block mb-1">Title</label>
+                    <input type="text" name="title"
+                           class="w-full rounded border-gray-300"
+                           required>
+                </div>
 
-            <button class="bg-green-500 text-white px-4 py-2 rounded">
-                Save
-            </button>
-        </form>
+                <!-- DESCRIPTION -->
+                <div class="mb-6">
+                    <label class="block mb-1">Description</label>
+                    <textarea name="description"
+                              class="w-full rounded border-gray-300"
+                              rows="4"></textarea>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <button type="submit"
+                        class="px-6 py-2 rounded text-white"
+                        style="background-color:#5A1A1A;">
+                    Save Task
+                </button>
+            </form>
+
+        </div>
     </div>
 </x-app-layout>
